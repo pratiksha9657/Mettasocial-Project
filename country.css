@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('mbg.jpg'); /* Add background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    text-align: center;
+    color: #fff; /* Text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0px;
+    padding: 34px;
+    height: 700px;
+    background-color: rgba(11, 1, 1, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(99, 200, 200, 0.3);
+}
+
+input[type="text"] {
+    width: calc(100% - 120px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 170px;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #f0efed;
+    background: #eeb408;
+    color: #030211;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+    position: relative;
+}
+
+input[type="submit"]:hover {
+    background: #05040e;
+    color: #feaf1b;
+}
+
+input[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+input[type="submit"]:hover::before {
+    width: 100%;
+}
+
+.success {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s;
+}
+
+.success svg {
+    width: 20px;
+    height: 20px;
+    fill: yellowgreen;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all .35s;
+}
+
+input[type="submit"].is_active {
+    width: 40px;
+    height: 40px;
+}
+
+input[type="submit"].is_active::before {
+    width: 40px;
+}
+
+input[type="submit"].is_active .success {
+    opacity: 1;
+    visibility: visible;
+}
+
+input[type="submit"].is_active .success svg {
+    margin-top: 50%;
+    transform: translateY(-50%) rotate(720deg) scale(1);
+}
+
+input[type="submit"].is_active span {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.results {
+    text-align: left;
+    color: #000; /* Results text color */
+}
+.country-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.country {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(25, 2, 2, 0.8);
+    border-radius: 4px;
+    width: 200px;
+    height: 300px;
+    box-sizing: border-box;
+    position: relative; /* Required for absolute positioning of pseudo-element */
+    overflow: hidden; /* Hide overflowing content */
+    border: 1.5px solid rgb(121, 80, 5); /* Initial border to create the space for the shining border effect */
+  
+}
+
+.country::before {
+    content: '';
+    position: absolute;
+    top: -2px; /* Adjust to account for border width */
+    left: -2px; /* Adjust to account for border width */
+    width: calc(100% + 4px); /* Adjusted width to cover the border area */
+    height: calc(100% + 4px); /* Adjusted height to cover the border area */
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+    z-index: -1; /* Ensure it's below the box content */
+}
+
+.country:hover::before {
+    background-color: #fff; /* Shining border color */
+}
+
+
+
+.country-name, .capital {
+    font-weight: bold;
+    margin:20px;
+
+    color: #fff; /* Set text color to white for better visibility */
+}
+
+.flag {
+    max-width: 130px;
+    display: block;
+    margin: 0 auto 10px 
+}
+h2 {
+    font-family: Arial, sans-serif; /* Choose an appropriate font family */
+    font-size: 2em; /* Adjust the font size */
+    color: #f1ecec; /* Set the text color */
+    text-align: center; /* Align the text to the center */
+    padding: 10px; /* Add padding around the text */
+    /* Add a background color */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    transform-style: preserve-3d; /* Ensure 3D transformations are applied */
+}
+
+h2:hover {
+    transform: rotateY(10deg) scale(1.05); /* Rotate and scale the element on hover */
+}
